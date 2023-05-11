@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from django.http import HttpRequest, HttpResponse
+from django.http import HttpRequest, HttpResponse, JsonResponse
 
 
 def home(request: HttpRequest) -> HttpResponse:
@@ -21,7 +21,8 @@ def get_sum(request: HttpRequest):
     result = {
         'result': int(a) + int(b)
     }
-    print(result)
+    
+    return JsonResponse(result)
 
 
 urlpatterns = [
