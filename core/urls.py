@@ -16,7 +16,15 @@ def get_params(request: HttpRequest):
     pass
 
 def get_sum(request: HttpRequest):
-    pass
+    params = request.GET
+
+    a = params.get('a', 0)
+    b = params.get('b', 0)
+
+    result = {
+        'result': int(a) + int(b)
+    }
+    print(result)
 
 
 urlpatterns = [
