@@ -1,13 +1,10 @@
 from django.contrib import admin
 from django.urls import path
-from django.http import HttpRequest
+from django.http import HttpRequest, HttpResponse
 
 
-def home(request: HttpRequest):
-    print(request.method)
-    print(request.path)
-    print(request.content_type)
-    pass
+def home(request: HttpRequest) -> HttpResponse:
+    return HttpResponse('<h1>Hello</h1>')
 
 def get_params(request: HttpRequest):
     params = request.GET
