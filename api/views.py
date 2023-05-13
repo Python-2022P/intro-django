@@ -36,3 +36,7 @@ def get_sum(request: HttpRequest):
 
 def get_user(request: HttpRequest, username: str) -> JsonResponse:
     return JsonResponse({'username': username})
+
+
+def index(request: HttpRequest):
+    return JsonResponse({'username': 200})
