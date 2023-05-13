@@ -32,3 +32,7 @@ def get_sum(request: HttpRequest):
         print(type(data))
 
         return JsonResponse({'result': data['a'] + data['b']})
+    
+
+def get_user(request: HttpRequest, username: str) -> JsonResponse:
+    return JsonResponse({'username': username})
